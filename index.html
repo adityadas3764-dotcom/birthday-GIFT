@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday ADITYA 🎉</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    text-align: center;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Glass Card */
+.container {
+    margin: 30px auto;
+    padding: 25px;
+    width: 90%;
+    max-width: 400px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Heading */
+h1 {
+    font-size: 2.2rem;
+}
+
+/* Neon Name */
+.name {
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 5px;
+    animation: neonGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes neonGlow {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #ff4da6;
+    }
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 40px #ff1a75;
+    }
+}
+
+/* Image */
+.photo {
+    width: 100%;
+    border-radius: 15px;
+    margin: 20px 0;
+}
+
+/* Button */
+button {
+    padding: 12px 20px;
+    margin: 8px;
+    border: none;
+    border-radius: 25px;
+    background: #ff4081;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #e91e63;
+}
+
+/* Popup */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    color: black;
+    padding: 20px;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 300px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .name {
+        font-size: 2rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>🎉 Happy Birthday 🎂</h1>
+
+    <h2 class="name"> DEAR ADITYA</h2>
+
+
+    <p>May your life be filled with happiness, success & endless joy 🎂✨</p>
+
+    <autoclick="startConfetti()">
+    <button onclick="showPopup()">🎁 Surprise</button>
+    
+</div>
+
+<!-- Popup -->
+<div class="popup" id="popup">
+    <h3>🎉 Letter 🎉</h3>
+    <p>জানো তো, তোমাকে দেখার আগের জীবন আর পরের জীবনের মধ্যে অনেক পার্থক্য। 
+তুমি আসার পর আমার পৃথিবীটা যেন হঠাৎ করেই রঙিন হয়ে উঠেছে। 
+তোমার হাসিতে আমি আমার সুখ খুঁজি, তোমার চোখের গভীরে আমি আমার স্বর্গ দেখি। 
+তুমি পাশে থাকলে মনে হয়, এই অসম্পূর্ণ জীবনে আর কিছুরই প্রয়োজন নেই। 
+আমি চাই, সারাটা জীবন এভাবেই তোমার হাত ধরে পথ চলতে, হাজারো ঝড়ের মাঝেও তোমার চোখের দিকে তাকিয়ে বলতে—তুমি আছো, তাই আমি বেঁচে আছি।</p>
+   
+ <button onclick="closePopup()">Close</button>
+</div>
+
+
+<!-- Confetti -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>
+// Auto Confetti on Load
+window.onload = function() {
+    startConfetti();
+};
+
+// Confetti Function
+function startConfetti() {
+    var duration = 3000;
+    var end = Date.now() + duration;
+
+    (function frame() {
+        confetti({ particleCount: 7, angle: 60, spread: 70, origin: { x: 0 } });
+        confetti({ particleCount: 7, angle: 120, spread: 70, origin: { x: 1 } });
+
+        if (Date.now() < end) {
+            requestAnimationFrame(frame);
+        }
+    })();
+}
+
+// Popup
+function showPopup() {
+    document.getElementById("popup").style.display = "block";
+}
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+}
+
+</script>
+
+</body>
+</html>
